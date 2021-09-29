@@ -15,7 +15,7 @@ def is_prime(n):
     if n % 2 == 0 or n % 3 == 0:
         return False
 
-    for i in range(3, int(math.sqrt(n)), 2):
+    for i in range(3, int(math.sqrt(n))+1, 2):
         if n % i == 0:
             return False
 
@@ -42,11 +42,11 @@ Returneaza CMMDC a doua numere x si y folosind primul algoritm.
 
 
 def get_cmmdc_v1(x, y):
-    while x != y:
+    while x is not y:
         if x > y:
-            y -= x
-        else:
             x -= y
+        else:
+            y -= x
 
     return x
     pass
@@ -68,6 +68,22 @@ def get_cmmdc_v2(x, y):
 
 
 def main():
+    n = int(input("Alegeti:\n1 -> Verificare nr prim.\n2 -> Produsul numerelor din lista.\n3 -> CMMDC V1.\n4 -> CMMDC V2.\n"))
+    if n == 1:
+        numar = int(input("Introduceti numarul."))
+        print(is_prime(numar))
+    elif n == 2:
+        lungime_lista = int(input("Introduceti lungimea listei."))
+        lista = []
+        for _ in range(0, lungime_lista):
+            numarul = int(input("Introduceti numarul: "))
+            lista.append(numarul)
+        print(get_product(lista))
+    elif n == 3 or n == 4:
+        primul_numar = int(input("Introduceti primul numar: "))
+        al_doilea_numar = int(input("Introduceti al doilea numar: "))
+        print(get_cmmdc_v1(primul_numar, al_doilea_numar))
+
     pass
 
 
