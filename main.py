@@ -67,6 +67,7 @@ def get_cmmdc_v2(x, y):
     pass
 
 
+# This is the main function
 def main():
     n = int(input("Alegeti:\n1 -> Verificare nr prim.\n2 -> Produsul numerelor din lista.\n3 -> CMMDC V1.\n4 -> CMMDC V2.\n"))
     if n == 1:
